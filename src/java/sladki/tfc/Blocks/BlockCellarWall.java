@@ -18,7 +18,7 @@ public class BlockCellarWall extends BlockTerra {
 
 	public BlockCellarWall(Material material) {
 		super(material);
-		this.setBlockTextureName(Cellars.MODID + ":" + "cellarWall");
+		setTextureName(Cellars.MODID + ":" + "cellarWall");
 		this.setCreativeTab(TFCTabs.TFC_BUILDING);
 		this.setStepSound(Block.soundTypeWood);
 	}

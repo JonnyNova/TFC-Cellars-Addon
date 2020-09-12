@@ -29,9 +29,12 @@ public class TECellarShelf extends TileEntity implements IInventory {
 	private float temperature = -1;
 	
 	private int updateTickCounter = 120;
-	
-	
-	
+
+	@Override
+	public boolean isCustomInventoryName() {
+		return false;
+	}
+
 	public TECellarShelf() {
 		inventory = new ItemStack[getSizeInventory()];
 	}	
@@ -64,7 +67,7 @@ public class TECellarShelf extends TileEntity implements IInventory {
 				}
 			}
 
-			TFC_Core.handleItemTicking(this, worldObj, xCoord, yCoord, zCoord, envDecay);
+			TFC_Core.handleItemTicking(this, worldObj, xCoord, yCoord, zCoord, envDecay, false);
 		} else {
 			cellarTick++;
 			
@@ -131,11 +134,6 @@ public class TECellarShelf extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public boolean hasCustomInventoryName() {
-		return false;
-	}
-
-	@Override
 	public int getInventoryStackLimit() {
 		return 64;
 	}
@@ -146,11 +144,11 @@ public class TECellarShelf extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public void openInventory() {
+	public void openChest() {
 	}
 
 	@Override
-	public void closeInventory() {
+	public void closeChest() {
 	}
 
 	@Override
@@ -208,8 +206,8 @@ public class TECellarShelf extends TileEntity implements IInventory {
 	
 	@Override
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity packet) {
-		readFromNBT(packet.func_148857_g());
-		readSyncData(packet.func_148857_g());
+		readFromNBT(packet.getNbtCompound());
+		readSyncData(packet.getNbtCompound());
 	}
 	
 }

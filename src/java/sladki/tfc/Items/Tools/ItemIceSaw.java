@@ -2,6 +2,10 @@ package sladki.tfc.Items.Tools;
 
 import java.util.Set;
 
+import com.dunk.tfc.api.Enums.EnumDamageType;
+import com.dunk.tfc.api.Enums.EnumItemReach;
+import com.dunk.tfc.api.Interfaces.IAttackSpeed;
+import com.dunk.tfc.api.Interfaces.ICausesDamage;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -16,18 +20,13 @@ import com.dunk.tfc.Items.Tools.ItemTerraTool;
 import com.dunk.tfc.api.TFCBlocks;
 import com.google.common.collect.Sets;
 
-public class ItemIceSaw extends ItemTerraTool {
+public class ItemIceSaw extends ItemTerraTool implements ICausesDamage, IAttackSpeed {
 
 	private static final Set<Block> blocksEffectiveAgainst = Sets.newHashSet(new Block[]{TFCBlocks.ice});
 
 	
 	public ItemIceSaw(ToolMaterial material) {
 		super(1.0f, material, blocksEffectiveAgainst);
-	}
-	
-	@Override
-	public float func_150893_a(ItemStack par1ItemStack, Block par2Block) {
-		return par2Block != null && par2Block.getMaterial() == Material.ice ? this.efficiencyOnProperMaterial*0.1F : super.func_150893_a(par1ItemStack, par2Block);
 	}
 	
 	@Override
@@ -52,5 +51,14 @@ public class ItemIceSaw extends ItemTerraTool {
 		}
         return true;
     }
-	
+
+	@Override
+	public EnumItemReach getReach(ItemStack is) {
+		return EnumItemReach.FAR;
+	}
+
+	@Override
+	public EnumDamageType getDamageType(EntityLivingBase entityLivingBase) {
+		return EnumDamageType.SLASHING;
+	}
 }

@@ -14,7 +14,7 @@ public class ItemIceSawHead extends ItemTerra {
 	
 	public ItemIceSawHead() {
 		super();
-		this.setMaxDamage(100);
+//		this.setMaxDamage(100);
 		this.setMaxStackSize(4);
 		setCreativeTab(TFCTabs.TFC_MISC);
 		this.setWeight(EnumWeight.MEDIUM);

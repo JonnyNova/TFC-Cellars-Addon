@@ -206,9 +206,10 @@ public class BlockCellarDoor extends Block {
 	public boolean renderAsNormalBlock() {
 		return false;
 	}
-	
+
+
 	@Override
-	public boolean getBlocksMovement(IBlockAccess block, int x, int y, int z) {
+	public boolean isBlockSolid(IBlockAccess block, int x, int y, int z, int side) {
 		int meta = getDoorMetadata(block, x, y, z);
 		return (meta & 4) != 0;
 	}
@@ -217,9 +218,9 @@ public class BlockCellarDoor extends Block {
 	public boolean isOpaqueCube() {
 		return false;
 	}
-	
+
 	@Override
-	public void registerBlockIcons(IIconRegister registerer) {
+	public void registerIcons(IIconRegister registerer) {
 		textureSide = registerer.registerIcon(Cellars.MODID + ":" + "cellarDoorSide");
 		textureUpper = registerer.registerIcon(Cellars.MODID + ":" + "cellarDoorUpper");
 		textureLower = registerer.registerIcon(Cellars.MODID + ":" + "cellarDoorLower");

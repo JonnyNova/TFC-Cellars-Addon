@@ -36,12 +36,12 @@ public class BlockCellarShelf extends BlockContainer {
 	public IIcon getIcon(int side, int meta) {
 		return textureSide;
 	}
-	
+
 	@Override
-	public void registerBlockIcons(IIconRegister registerer) {
+	public void registerIcons(IIconRegister registerer) {
 		textureSide = registerer.registerIcon("minecraft:planks_oak");
 	}
-	
+
 	@Override
 	public boolean isOpaqueCube() {
 		return false;

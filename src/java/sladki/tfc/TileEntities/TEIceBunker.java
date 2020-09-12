@@ -351,7 +351,7 @@ public class TEIceBunker extends TileEntity implements IInventory {
 	}
 	
 	private int getBlockType(int x, int y, int z) {
-		Block block = getWorldObj().getBlock(xCoord + x, yCoord + y, zCoord + z);
+		Block block = getWorld().getBlock(xCoord + x, yCoord + y, zCoord + z);
 		if(block == ModManager.CellarWallBlock) {
 			return 0;
 		} else if(block == ModManager.CellarDoorBlock) {
@@ -384,7 +384,7 @@ public class TEIceBunker extends TileEntity implements IInventory {
 	}
 	
 	private void updateContainer(int x, int y, int z, float envDecay) {
-		Block block = getWorldObj().getBlock(xCoord + x, yCoord + y, zCoord + z);
+		Block block = getWorld().getBlock(xCoord + x, yCoord + y, zCoord + z);
 		if(block == ModManager.CellarShelfBlock) {
 			TileEntity tileEntity = worldObj.getTileEntity(xCoord + x, yCoord + y, zCoord + z);
 			if(tileEntity != null) {
@@ -441,7 +441,7 @@ public class TEIceBunker extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public boolean hasCustomInventoryName() {
+	public boolean isCustomInventoryName() {
 		return false;
 	}
 
@@ -456,11 +456,11 @@ public class TEIceBunker extends TileEntity implements IInventory {
 	}
 
 	@Override
-	public void openInventory() {
+	public void openChest() {
 	}
 
 	@Override
-	public void closeInventory() {
+	public void closeChest() {
 	}
 
 	@Override
@@ -524,8 +524,8 @@ public class TEIceBunker extends TileEntity implements IInventory {
 	
 	@Override
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity packet) {
-		readFromNBT(packet.func_148857_g());
-		readSyncData(packet.func_148857_g());
+		readFromNBT(packet.getNbtCompound());
+		readSyncData(packet.getNbtCompound());
 	}
 
 }

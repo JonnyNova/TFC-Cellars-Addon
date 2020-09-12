@@ -71,11 +71,11 @@ public class ModManager {
 	}
 	
 	public static void loadBlocks() {
-		CellarWallBlock = new BlockCellarWall(Material.wood).setBlockName("CellarWall").setHardness(4);
-		IceBunkerBlock = new BlockIceBunker(Material.wood).setBlockName("IceBunker").setHardness(5);
-		CellarShelfBlock = new BlockCellarShelf(Material.wood).setBlockName("CellarShelf").setHardness(3);
-		CellarDoorBlock = new BlockCellarDoor(Material.wood).setBlockName("CellarDoor").setHardness(4);
-		IceBlock = new BlockIce().setHardness(0.5F).setLightOpacity(3).setStepSound(Block.soundTypeGlass).setBlockName("Ice");
+		CellarWallBlock = new BlockCellarWall(Material.wood).setUnlocalizedName("CellarWall").setHardness(4);
+		IceBunkerBlock = new BlockIceBunker(Material.wood).setUnlocalizedName("IceBunker").setHardness(5);
+		CellarShelfBlock = new BlockCellarShelf(Material.wood).setUnlocalizedName("CellarShelf").setHardness(3);
+		CellarDoorBlock = new BlockCellarDoor(Material.wood).setUnlocalizedName("CellarDoor").setHardness(4);
+		IceBlock = new BlockIce().setHardness(0.5F).setLightOpacity(3).setStepSound(Block.soundTypeGlass).setUnlocalizedName("Ice");
 	}
 	
 	public static void registerBlocks() {
@@ -99,15 +99,15 @@ public class ModManager {
 		RedSteelIceSawHead = new ItemIceSawHead().setUnlocalizedName("RedSteelIceSawBlade");
 		SteelIceSawHead = new ItemIceSawHead().setUnlocalizedName("SteelIceSawBlade");
 		
-		BismuthBronzeIceSaw = new ItemIceSaw(TFCItems.bismuthBronzeToolMaterial).setUnlocalizedName("BismuthBronzeIceSaw").setMaxDamage(TFCItems.bismuthBronzeUses);
-		BlackBronzeIceSaw = new ItemIceSaw(TFCItems.blackBronzeToolMaterial).setUnlocalizedName("BlackBronzeIceSaw").setMaxDamage(TFCItems.blackBronzeUses);
-		BlackSteelIceSaw = new ItemIceSaw(TFCItems.blackSteelToolMaterial).setUnlocalizedName("BlackSteelIceSaw").setMaxDamage(TFCItems.blackSteelUses);
-		BlueSteelIceSaw = new ItemIceSaw(TFCItems.blueSteelToolMaterial).setUnlocalizedName("BlueSteelIceSaw").setMaxDamage(TFCItems.blueSteelUses);
-		BronzeIceSaw = new ItemIceSaw(TFCItems.bronzeToolMaterial).setUnlocalizedName("BronzeIceSaw").setMaxDamage(TFCItems.bronzeUses);
-		CopperIceSaw = new ItemIceSaw(TFCItems.copperToolMaterial).setUnlocalizedName("CopperIceSaw").setMaxDamage(TFCItems.copperUses);
-		WroughtIronIceSaw = new ItemIceSaw(TFCItems.ironToolMaterial).setUnlocalizedName("WroughtIronIceSaw").setMaxDamage(TFCItems.wroughtIronUses);
-		RedSteelIceSaw = new ItemIceSaw(TFCItems.redSteelToolMaterial).setUnlocalizedName("RedSteelIceSaw").setMaxDamage(TFCItems.redSteelUses);
-		SteelIceSaw = new ItemIceSaw(TFCItems.steelToolMaterial).setUnlocalizedName("SteelIceSaw").setMaxDamage(TFCItems.steelUses);
+		BismuthBronzeIceSaw = new ItemIceSaw(TFCItems.bismuthBronzeToolMaterial).setUnlocalizedName("BismuthBronzeIceSaw");//.setMaxDamage(TFCItems.bismuthBronzeUses);
+		BlackBronzeIceSaw = new ItemIceSaw(TFCItems.blackBronzeToolMaterial).setUnlocalizedName("BlackBronzeIceSaw");//.setMaxDamage(TFCItems.blackBronzeUses);
+		BlackSteelIceSaw = new ItemIceSaw(TFCItems.blackSteelToolMaterial).setUnlocalizedName("BlackSteelIceSaw");//.setMaxDamage(TFCItems.blackSteelUses);
+		BlueSteelIceSaw = new ItemIceSaw(TFCItems.blueSteelToolMaterial).setUnlocalizedName("BlueSteelIceSaw");//.setMaxDamage(TFCItems.blueSteelUses);
+		BronzeIceSaw = new ItemIceSaw(TFCItems.bronzeToolMaterial).setUnlocalizedName("BronzeIceSaw");//.setMaxDamage(TFCItems.bronzeUses);
+		CopperIceSaw = new ItemIceSaw(TFCItems.copperToolMaterial).setUnlocalizedName("CopperIceSaw");//.setMaxDamage(TFCItems.copperUses);
+		WroughtIronIceSaw = new ItemIceSaw(TFCItems.ironToolMaterial).setUnlocalizedName("WroughtIronIceSaw");//.setMaxDamage(TFCItems.wroughtIronUses);
+		RedSteelIceSaw = new ItemIceSaw(TFCItems.redSteelToolMaterial).setUnlocalizedName("RedSteelIceSaw");//.setMaxDamage(TFCItems.redSteelUses);
+		SteelIceSaw = new ItemIceSaw(TFCItems.steelToolMaterial).setUnlocalizedName("SteelIceSaw");//.setMaxDamage(TFCItems.steelUses);
 	}
 	
 	public static void registerItems() {
